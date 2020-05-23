@@ -1,0 +1,67 @@
+/* CSS for media Queries 1281px to 1000px */
+
+    /* for home page  */
+
+        @media only screen and (min-width: 1000px) {
+
+        /* CSS for "container display"  */
+
+
+      .page {
+    /*    border: 1px solid orange;  */
+      }
+
+        #page1 h2 {
+          font-size: calc(1.3em + 40 * 70vw/1620);
+          border: 1px solid orange;
+        }
+
+        #page1 ul {
+          font-size: calc(1.1em + 30 * 70vw/1620);
+          width: 80%;
+          border: 1px solid orange;
+        }
+
+      .selectCntnr {
+        position: fixed;
+        top: 35px;
+        left: 10px;
+        z-index: 20;
+      }
+
+          .selectCntnr label {
+            margin-right: 10px; 
+            cursor: pointer;
+            padding: 0 3px;
+            color: white;
+            font-size: 16px;
+            border: 1px solid white;
+          }
+
+          .selectCntnr label:hover {
+            margin-top:4px;
+          }
+
+          #page2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+          }
+
+          #page2 div {
+    /*        width:50%;  */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;   
+            border:1px solid red;
+          }
+
+          #page2 div ul {
+            border:1px solid yellow;
+          }
+
+          #page2 div h2 {
+            font-size: calc(0.5em + 40 * 90vw/1620);
+            border:1px solid white;
+          }
