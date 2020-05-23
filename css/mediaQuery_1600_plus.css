@@ -13,13 +13,13 @@
 
         #page1 h2 {
           font-size: calc(1.3em + 40 * 70vw/1620);
-          border: 1px solid orange;
+     /*     border: 1px solid orange;  */
         }
 
         #page1 ul {
           font-size: calc(1.1em + 30 * 70vw/1620);
           width: 80%;
-          border: 1px solid orange;
+      /*   border: 1px solid orange; */
         }
 
       .selectCntnr {
@@ -35,7 +35,7 @@
             padding: 0 3px;
             color: white;
             font-size: 16px;
-            border: 1px solid white;
+       /*     border: 1px solid white;  */
           }
 
           .selectCntnr label:hover {
@@ -46,6 +46,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+      /*      border:1px solid green; */
           }
 
           #page2 div {
@@ -54,14 +55,15 @@
             flex-direction: column;
             justify-content: center;
             text-align: center;   
-            border:1px solid red;
+        /*    border:1px solid red; */
           }
 
-          #page2 div ul {
-            border:1px solid yellow;
+          #page2 div ol {
+    /*       border:1px solid yellow; */
           }
 
           #page2 div h2 {
+            color: orange;
             font-size: calc(0.5em + 40 * 90vw/1620);
-            border:1px solid white;
+       /*     border:1px solid white;   */
           }
