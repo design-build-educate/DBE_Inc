@@ -4,6 +4,13 @@
 /* Data for all Company  */
 
         // Children of cNode0 (Company<br>Manager (CEO))
+    
+        var cNode00 =  {
+            id: "c00",
+            name: "Media<br>Department",
+            data:{"width":"90","height":"37"},
+            children:[]           
+        };
 
             // Children of cNode01 (Education<br>Department)
 
@@ -289,7 +296,7 @@
         id: "c0",
         name: "Company<br>Manager (CEO)",
         data:{"width":"115","height":"37"},
-        children:[cNode01,cNode02,cNode03,cNode04]          
+        children:[cNode00,cNode01,cNode02,cNode03,cNode04]          
     };
 
     var cNode1=  {
@@ -308,7 +315,7 @@
         
 var cNode4 =  {
     id: "c4",
-    name: "Design-Build-Educate Inc.",
+    name: "Educate, Design & Build Inc.",
     data:{"width":"190","height":"23"},
     children:[cNode0,cNode1,cNode2]         
 };

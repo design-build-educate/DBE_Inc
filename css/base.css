@@ -26,24 +26,25 @@
         width: 100%;
         height: 99vh;
         overflow: hidden;
+        background: black;
      /*    margin-top: 3em;  */
     /*   border: 2px solid green;  */
       }
 
 
-
-
-
-
     /* CSS for 'main' Navigation  */
+
+    .selNav {
+        color: orange;
+    }
 
 	.mainNav {
     /*    display: none;  */
 	    position: fixed;
 	    top: 0;
         left:0;
-	    width:99%;
-		height:2.5vw;
+	    width:100%;
+		height:3.2em;
     /*    opacity: 0.3;  */
 	/*	margin: 0.1em;
 		margin-top:0.1em; */
@@ -59,109 +60,518 @@
         }
  */
         .navList {
-            position: absolute;
+     /*       position: absolute;
             top: 0;
-            right: 0;
-            width: 95%;
+            right: 0;  */
+            width: 100%;
             text-decoration: none;
             list-style-type: none;
             display: flex;
             justify-content: space-around;
-      /*      margin: 0 2em;    */
+            margin-bottom: 0.2em;    
             padding: 0;
         }
 
-        .navItem{
+        .navItem {
        /*     text-decoration: none; */
             cursor:pointer;
       /*      height: 1.4em;  */
-            font-size: calc(16px + 22 * 70vw/1620); /*2vw;  */
+            font-size: 1.4em; /*calc(1em + 22 * 70vw/1620); 2vw;  */
      /*       padding: 0.1em 0.1em;
             margin: 0.1em 0.2em;  */
             color: white;
             transition: color .5s ease;
-    /*        border: 1px solid white;   */
-   /*         background-color:black;  */
+      /*      border: 1px solid white;   
+            background-color:black;  */
         }
 
         .navItem:hover {
         /*    padding-top: 0.05em;  */
             color: orange; /*#FFA07A; */
+            opacity: 0.5;
             transition: color .5s ease;
         }
 
-        .selPg {
-            color:orange;
+        .navSubItem {
+       /*     text-decoration: none; */
+            cursor:pointer;
+      /*      height: 1.4em;  */
+            font-size: 1.2em;/*calc(0.7em + 22 * 70vw/1620); 2vw;  */
+     /*       padding: 0.1em 0.1em;
+            margin: 0.1em 0.2em;  */
+            margin-right: 1.5em;
+            color: white;
+            transition: color .5s ease;
+     /*       border: 1px solid white;   
+            background-color:black;  */
+        }
+
+        .navSubItem:hover {
+        /*    padding-top: 0.05em;  */
+            color: orange; /*#FFA07A; */
+        /*    opacity: 0.5;  */
+            transition: color .5s ease;
         }
 
 
-
-
+    .subNav {
+    /*    display: none;  */
+        width: 100%;
+        height: 1.4em;
+        display: flex;
+        justify-content: space-around;
+    /*    opacity: 0.3;  */
+    /*  margin: 0.1em;
+        margin-top:0.1em; */
+        background-color:black;
+     /*   border: 1px solid blue;  */
+    }
+        .navSubList {
+         /*   position: absolute;
+            top: 2.6vw;
+            right: 0; */
+         /*  width: 75%;  */
+            text-decoration: none;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+        /*    margin-left: 2em;   */ 
+            padding: 0;
+        /*    border: 4px solid green;  */
+        }
       
 
-    /* CSS for 'main' Navigation  */
+    /* CSS for page container  */
 
     .pageCntnr {
         position: relative;
         top: 0;
-        left: 0;
+        left: 0;  
         width: 100%;
         height: 100%;
-    /*    padding-top: 4.7vw; */
-    /*    margin: 1em;  */
-     /*   border: 1px solid yellow;  */
+    /*    padding-top: 4.7vw; 
+        margin: 5px;
+        background: black;  */
+        /*  border: 2px solid red;  */
     }
 
-    .homePage {
-        width: 100%;
-        height: 80%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center; 
-     /*   margin: 2px;  */
-    /*    border: 1px solid white;   */
-    }
+        /* CSS for home page  */
 
-    .headingCntnr {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    /*    border: 1px solid red;   */
-    }
+        .homePage {
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+         /*   align-items: flex-center;  */
+         /*   margin: 2px;  */
+          /*  border: 2px solid white;   */
+        }
+
+            .headingCntnr {
+                width: 100%;
+                height: 100%;
+                margin-top: 10em;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                border: 1px solid red;   
+            }
+      
         
 
-      .homePage h2 {
-    /*    border: 1px solid orange;  */
-        font-size: 5vw;
-        height: 50px;
-        margin-bottom: 1em;
-      }
-        
+            .homePage h1 {
+        /*    border: 1px solid orange;  */
+                font-size: 2em;
+        /*    height: 5em;   */
+            }  
 
-      .homePage h1 {
-    /*    border: 1px solid orange;  */
-        font-size: 7vw;
-    /*    height: 5em;   */
-      }
+            .homePage h2 {
+        /*    border: 1px solid orange;  */
+                font-size: 1.7em;
+        /*    height: 3em;
+            margin-bottom: 1em; */
+            }  
 
-    .page {
-        width: 100%;
-        height: calc(100% - 2.5vw);
-        position: absolute;
-        top: 2.5vw;
-        left: 0;
-    /*    background-color: black;  */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;   
-   /*     border: 1px solid red;  */
-   /*     overflow: hidden;   */
-    }
+            .homePage h3 {
+        /*    border: 1px solid orange;  */
+                font-size: 1.4em;
+        /*    height: 3em;
+            margin-top: 1em; */
+            }
+
+
+
+        /* CSS for page  */
+
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;  
+            width: 100%;
+            height: 99vh; /* calc(99% - 3.2em);  */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        /*    margin: 5px;  */
+            background: black;  
+           border: 2px solid blue;  
+            overflow: hidden;   
+        }
+
+
+
+            /* CSS for About page  */
+
+            .subPage {
+                width: 100%;
+                height: 100%; /* calc(100% - 5.2vw); */
+                position: absolute;
+                top: 0;
+                left: 0; 
+            /*    background-color: black;  */
+             /*   display: flex;
+                flex-direction: column;
+                align-items: center;  
+                justify-content: center;  */ 
+            /*    border: 2px solid yellow;  
+                overflow: hidden;   */
+            }
+
+                .subPage label {
+                    color: orange;
+                }
+
+                .subPage li {
+                    color: #CCC;
+                }
+
+
+
+            .divCntnr {
+                width: 100%;
+                height: 100%;
+             /*   padding: 5px;  */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            /*     text-align: center;
+              border: 1px solid red; */
+            }
+
+                .divCntnr label {
+                /*      text-align: center;
+                    margin: auto;*/
+                    font-size: 7vh;
+                    word-wrap: break-word;
+                }
+
+
+
+            .labelCntnr {
+                width: 100%;
+                text-align: center;
+                margin-top: 0.5em;
+          /*      display: flex;
+                justify-content: space-around;  */
+            }
+
+            .ulCntnr {
+                width: 65%; 
+                margin-top: 0.5em;
+                margin-left: 3em;
+                font-size: 5vh;
+             /*   text-decoration: none;  */
+                list-style-type: none;
+             /*   display: flex;
+                flex-direction: column;
+                align-items: center;  */
+            } 
+
+                .ulCntnr li {
+                    margin-bottom: 0.3em;
+               /*     display: flex;
+                    text-align: center; */
+                }
+
+
+
+            /* CSS for Execute page  */
+
+                /* CSS for .execPlanCntnr  */
+
+
+                .execPlanCntnr {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;  
+                    width: 100%;
+                    height: 100%;
+                    margin: 5px;
+                    color: white;
+                /*      background: red;
+                  border: 2px solid blue; */
+                }
+
+                    .execPlanCntnr label {
+                        color: white;
+                        font-size: 1.5em;
+                    }
+
+
+                /* CSS for .selectorCntnr  */
+
+                .selectorCntnr {
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    top: 0;             
+                    padding: 2px;
+                    width: 100%;
+                    height: 20em;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin: 5px;
+                /*  border: 1px solid blue;  */
+                }
+
+
+                    /* CSS for .selectorLabel  */  
+
+                    .selectorLabel {
+                    /*     writing-mode: vertical-rl;
+                        text-orientation: upright;  
+                        margin-top: -1em;  */
+                        cursor: pointer;
+                        font-size: 0.5em;
+                        color: white;
+                        font-weight: bold;
+                        width: 2em;
+                    /*    height: 7em; 
+                        padding: 0.2em;  */
+                    /*   margin-right: 0.5em;  */
+                        background-color: white;
+                    /*    border: 1px solid white;  */
+                        border-bottom-left-radius: 1em;
+                        border-bottom-right-radius: 1em; 
+                        z-index: 10;  
+                    }
+
+
+                    /* CSS for .optionsCntnr  */  
+
+                    .optionsCntnr {
+                        display: flex;
+                        justify-content: space-between;
+                        transition: opacity 0.6s ease;
+                        padding-left: 1.5em;
+                        padding-right: 1.5em;
+                        padding-bottom: 1.5em;
+                        background: black;
+                     /*   border: 1px solid yellow; */
+                        box-sizing: content-box;
+                        color: white;
+                        margin-top: -1em;
+                    }
+
+                        .optionsCover {
+                            position: relative;
+                            display: flex; 
+                        /*    justify-content: space-between; */
+                            width: 24em;
+                            height: 16em;
+                        /*    margin-top: 1.5em;
+                            margin-right: 1.5em;
+                            margin-bottom: 1.5em; */
+                            padding: 1em;
+                         /*   border: 1px solid orange;  */
+                        }
+
+
+                        /* CSS for .deptList, .divListCntnr  */   
+
+                        .deptList, .divListCntnr {
+                         /*    position: relative;
+                            transition: margin-left 1s ease;
+                           padding: 1em;
+                            margin: 5px;
+                              transition-delay: 0.7s;
+                          width: 4em;
+                            height: 5em; */
+                        } 
+
+                            .deptOptions, .divOptions {
+                                list-style: none;
+                                font-size: 1.3em;
+                                padding: -1px;  
+                                white-space: nowrap; ;
+                             /*   border: 1px solid green;  */
+                            }
+
+                                .deptOptions li, .divOptions li {
+                                    cursor: pointer;
+                                /*    border: 1px solid blue; */
+                                }
+
+
+                        /* CSS for .deptList  */
+
+                            .deptLabel {
+                                color: white;
+                                font-size: 1.5em;
+                           /*     border: 1px solid white;  */
+                            }
+
+                            .deptOptions {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                list-style: none;
+                                font-size: 1.3em;
+                            }
+
+                                .deptOptions li {
+                                    cursor: pointer;
+                                }
+
+               
+                            .deptOptions {
+                             /*   margin-left: -2em;  */
+                            }
+
+                                .deptOptions li {
+                                    margin-left: -1.8em;  
+                                }
+
+
+                        /* CSS for .divListCntnr  */  
+
+                        .divListCntnr {
+                            position: relative;
+                            height: 100%;
+                            margin-left: 1em;
+                        /*    border: 1px solid blue; */
+                        }
+
+                            .divLabel {
+                                padding-left: 1.3em;
+                                color: white;
+                                font-size: 1.5em;
+                             /*   border: 1px solid white;  */
+                            }
+
+
+
+
+
+                
+  /*       .deptSelectorCntnr {
+            position: absolute;
+            left: 0;
+            top: 0; 
+            height: 100%; 
+            width: 1.2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+           border: 1px solid red; 
+        }  */
+
+
+
+
+
+                .selectedDept, .selectedDiv {
+                    color: orange;
+                }
+
+                .selectedDivList {
+                    opacity: 1;
+                }
+
+                .unSelectedDivList {
+                    opacity: 0;
+                }
+
+
+
+
+
+
+        .hideOptions {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        .currentId {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: -1;
+        }
+  
+
+     .selNav {
+            color: orange;
+        }
+
+        .z2 {
+            z-index: 2;
+        } 
+
+
+                .hideDeptOptions {
+                    margin-left: -3em;
+                }
+
+                .showDeptOptions {
+                    margin-left: 7em; 
+                }
+
+                .selectedDept {
+                    color: orange;
+                }
+
+                .unSelectedDept {
+                    color: white;
+                }
+
+
+
+
+        .currentDeptDivLabelCntnr {
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+
+
+
+
+       /*     .h2Cntnr {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                width: 1.3em;
+                height: 100%;
+            }  */
+
 
 
     /* CSS for hiding pages */
@@ -175,33 +585,31 @@
         transition: opacity 0.5s ease;
     }
 
-    /* CSS z-index */
 
-    .z5 {
-        z-index: 5;
-    }
 
-    .z10 {
-    	z-index: 10;
-    }
 
 
     /* CSS for Company Page */
 
     #companyCntnr {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-  /*      border: 1px solid green;  */
+        padding: 5px; 
+        border: 1px solid green; 
     }
 
     #companyVis {
         position:relative;
         width:100%;  /*600px */
-        height: 100vh;  /* 600px */
+        height:90vh;  /* 600px */
         margin:auto;
+        margin-top: -2em;
         overflow:hidden;
         background-color:black;
-  /*      border:1px solid red; */
+        border:1px solid red; 
     }
 
     #companyLog {
@@ -213,7 +621,7 @@
         color:yellow; 
         z-index:5; 
         padding:5px;
-    /*  border:1px solid yellow; */
+        border:1px solid yellow; 
         overflow:visible;
     }
 
@@ -237,71 +645,30 @@
     }
 
 
- /* for Web Company  */ 
 
-      .page {
-    /*    border: 1px solid orange;  */
-      }
 
-        #page1 h2 {
-            color: orange;
-          font-size: calc(1.3em + 40 * 70vw/1620);
-    /*      border: 1px solid orange;  */
-        }
 
-        #page1 ul {
-          font-size: calc(1.1em + 30 * 70vw/1620);
-          width: 80%;
-    /*      border: 1px solid orange;  */
-        }
 
-      .selectCntnr {
-        position: fixed;
-        top: 35px;
-        left: 10px;
-        z-index: 20;
-      }
+    /* CSS Miscellaneous: opacity, z-index */
 
-          .selectCntnr label {
-            margin-right: 10px; 
-            cursor: pointer;
-            padding: 0 3px;
-            color: white;
-            font-size: 16px;
-      /*      border: 1px solid white;  */
-          }
+    .blur {
+        opacity: 0.6;
+    }
 
-          .selectCntnr label:hover {
-            margin-top:4px;
-          }
+    /* CSS z-index */
 
-          #page2 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-     /*       border:1px solid green; */
-          }
+    .z5 {
+        z-index: 5;
+    }
 
-          #page2 div {
-    /*        width:50%;  */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;   
-       /*     border:1px solid red; */
-          }
+    .z10 {
+        z-index: 10;
+    }
 
-          #page2 div ol {
-     /*       border:1px solid yellow; */
-          }
+    .spanIndent {
+        opacity: 0;
+    }
 
-          #page2 div h2 {
-            color: orange;
-            font-size: calc(1.5em + 40 * 90vw/1620);
-      /*      border:1px solid white; */
-          }
-
-          #page2 div h3 {
-            color: orange;
-          }
-        
+    .underline {
+        color: orange;
+    }

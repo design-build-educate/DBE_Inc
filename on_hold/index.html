@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Company Name">
+    <meta name="keywords" content="Computer,Engineering,Technology,Company,Design,Build,Test,Programming">
+    <meta name="author" content="Bob Englert">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Your Company Name</title>
+
+
+    <!-- CSS Files -->
+    <link type="text/css" href="css/base.css" rel="stylesheet" />
+    <link type="text/css" href="css/mediaQuery_1600_plus.css" rel="stylesheet" />
+    <link type="text/css" href="css/Spacetree.css" rel="stylesheet" />
+
+    <!-- JIT Library File -->
+    <script language="javascript" type="text/javascript" src="js/jit.js"></script> 
+
+    <!-- Class Files -->
+    <script language="javascript" type="text/javascript" src="js/Company_Data.js"></script> 
+    <script language="javascript" type="text/javascript" src="js/JS_classes.js"></script> 
+    <script language="javascript" type="text/javascript" src="js/SpaceTreeClass.js"></script> 
+
+
+ 
+
+    <script>
+
+
+
+    </script>
+
+    <style>
+    </style>
+
+</head>
+
+<body>
+  <div class="mainCntnr">
+    <!-- Container for Page selectors   -->
+    <nav class="mainNav z10">
+ <!--     <img src="imgs/crucifix_Eng.jpg">   -->
+      <ul class="navList">
+        <li id="nav0" class="navItem selPg" onclick="PageMngr.changePage(event)">Home</li>
+        <li id="nav1" class="navItem" onclick="PageMngr.changePage(event)">About</li>
+        <li id="nav3" class="navItem" onclick="PageMngr.changePage(event)"> Company</li>
+        <li id="nav2" class="navItem" onclick="PageMngr.changePage(event)">Project</li>
+        <li id="nav4" class="navItem" onclick="PageMngr.changePage(event)">Execution</li>  
+      </ul>
+    </nav>
+    <!-- container for all pages  -->
+    <section class="pageCntnr">
+      <!-- Page 0  -->
+      <section id="page0" class="homePage">
+        <div class="headingCntnr">
+          <h2>Welcome to:</h2>
+          <h1>Design-Build-Educate Inc.</h1> 
+        </div>      
+      </section><!-- end of "homePage" --> 
+      <!-- Page 1 -->  
+      <section id="page1" class="page hide">
+          <h2>Guidelines for Proposed Project:</h2>
+          <ul>
+            <li>involves such a variety of skills and interests so as to require a fairly large group of students for its completion.</li>
+            <li>can challenge the brightest students yet be within the capabilities of the less talented students.</li>
+            <li>can be completed outside the structured school environment(e.g. at home).</li>
+            <li>has adult support(consultants with specialized talents as well as school employees who have connections with the students that consultants do not).</li>
+          </ul> 
+      </section> <!-- end of "page1"  -->
+      <!-- Page 2 -->
+      <div id="page2" class="page hide">
+        <div>
+          <h2>Project Goal:</h2>
+          <h3>(Give youth opportunities to gain experience<br>in the following areas:)</h3>
+          <ol>
+            <li>Business Management</li>
+            <li>Electrical Engineering</li>
+            <li>Electronic Technology</li>
+            <li>Computer Science</li>
+            <li>Photography/Videography</li>
+            <li>Education</li>
+          </ol>
+        </div>
+        <div> 
+          <h2>Project: Objectives</h2>
+          <ol>
+            <li>Design and build an 8-bit computer</li>
+            <li>Test and Train</li>
+            <li>Film all activities</li>
+            <li>Build a company Website</li>
+          </ol>
+        </div> 
+      </div><!-- end of "page2" --> 
+      <!-- Page 3  --> 
+      <section id="page3" class="page hide">
+ <!--       <h2>Comnpany  page</h2> -->
+        <div id="companyCntnr"> 
+          <div id="companyLog"></div>
+          <div id="companyVis"></div>
+        </div>      
+      </section><!-- end of "page3" -->
+      <!-- Page 4 -->  
+      <section id="page4" class="page hide">
+        <h2>Execution page</h2>        
+      </section> <!-- end of "page4" -->
+    </section>  <!-- end of "pageCntnr"  --> 
+  </div> <!-- end of "mainCntnr"  -->
+
+
+  <script>
+
+    
+    /* Global variables! necessary for SpaceTree? */  
+    var labelType, useGradients, nativeTextSupport, animate;
+
+
+
+    /* This IFF is included with spaceTree, JIT  */
+    (function() {
+        var ua = navigator.userAgent,
+            iStuff = ua.match(/iPhone/i) || ua.match(/iPad/i),
+            typeOfCanvas = typeof HTMLCanvasElement,
+            nativeCanvasSupport = (typeOfCanvas == 'object' || typeOfCanvas == 'function'),
+          textSupport = nativeCanvasSupport 
+              && (typeof document.createElement('canvas').getContext('2d').fillText == 'function');
+          //I'm setting this based on the fact that ExCanvas provides text support for IE
+          //and that as of today iPhone/iPad current text support is lame
+            labelType = (!nativeCanvasSupport || (textSupport && !iStuff))? 'Native' : 'HTML';
+        nativeTextSupport = labelType == 'Native';
+        useGradients = nativeCanvasSupport;
+        animate = !(iStuff || !nativeCanvasSupport);
+      })();
+
+   
+    /* This global var is used to indicate the status(eg 'loading' and 'done' ) of the displaying of the spaceTree  */
+    var genericLog = {
+      elem: false,
+      write: function(text){
+        if (!this.elem) 
+          this.elem = document.getElementById('companyLog');
+        this.elem.innerHTML = text;
+      /*  this.elem.style.left = (500 - this.elem.offsetWidth / 2) + 'px';  */
+      }
+    };
+  
+  </script>
+
+
+</body>
+</html>
