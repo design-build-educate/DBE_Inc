@@ -4,11 +4,11 @@ function createST(visId,selectedNode){
  //	alert("in createST");
 // alert("selectedNode.id:  " + selectedNode.id);
  //TODO if <div id="monasticVis-canvaswidget"> exists it must be removed from DOM in order to create a new one for the next requested data
-/*	if(document.getElementById(genericVis + "-canvaswidget")){
+	if(document.getElementById(visId + "-canvaswidget")){
 	    var infoEle = document.getElementById(genericVis + "-canvaswidget");
 	    infoEle.remove();
-	}
-*/
+	}  
+
     var jsonObj = selectedNode;
     var thisId = jsonObj.id;
 		levelDist = 25;
@@ -42,7 +42,7 @@ function createST(visId,selectedNode){
 //            width: 60,
 //              height:40,
 //            type: 'rectangle',
-            color: '#aaa',
+            color: '#FF0', //'#aaa',
             overridable: true
         },
         
@@ -56,7 +56,7 @@ function createST(visId,selectedNode){
         },
         
         onAfterCompute: function(){
-            genericLog.write("Click on nodes to expand tree<br>Click on " + "<img src='imgs/1_-_meeting.png' class='form_2'>");
+            genericLog.write("Click: 'NODES' to expand tree<br>Click: 'Purple Circle' for information ");
         },
         
         //This method is called on DOM label creation.
@@ -67,8 +67,10 @@ function createST(visId,selectedNode){
             label.id = node.id;            
    //  alert("nodeId: "+ node.id.slice(0,4));
 
-            // fill label.innerHTML
-	        label.innerHTML = "<div onClick=alert('hi') class='form'></div>" + "<div class='nodeName'>"+node.name+"</div>";
+           // fill label.innerHTML
+            let lblInnerHTML =  "<div id=\"" + "Id-" + node.id + "\" onclick=\"FormHandler.onclick(event)\" class=\"form\"></div>"
+         //   alert("lblInnerHTML: " + lblInnerHTML);
+            label.innerHTML = lblInnerHTML + node.name; 
 			
             label.onclick = function(){
               //  alert("node.id: " + node.id)
@@ -93,7 +95,6 @@ function createST(visId,selectedNode){
         //The data properties prefixed with a dollar
         //sign will override the global node style properties.
         onBeforePlotNode: function(node){
-			
 			node.data.$width = node.data.width;
 			node.data.$height = node.data.height;
 			
@@ -123,7 +124,7 @@ function createST(visId,selectedNode){
         //override the Edge global style properties.
         onBeforePlotLine: function(adj){
             if (adj.nodeFrom.selected && adj.nodeTo.selected) {
-                adj.data.$color = "#eed";
+                adj.data.$color = "#00F" //"#eed";
                 adj.data.$lineWidth = 3;
             }
             else {

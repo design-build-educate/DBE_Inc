@@ -1,4 +1,4 @@
-/* CSS for all pages
+/* || CSS for all pages
  *      body and nav
  *    and for the img on the home page
  */
@@ -17,133 +17,108 @@
 	    color: white; 
     }
 
-    /* CSS for the mainContainer (class="mainCntnr") */
+/* || End CSS for all pages
 
-      .mainCntnr {
-  /*      display: flex;
-        align-items: center;
-        justify-content: center;  */
-        width: 100%;
-        height: 99vh;
-        overflow: hidden;
-        background: black;
-     /*    margin-top: 3em;  */
-    /*   border: 2px solid green;  */
+    /* || CSS for the mainContainer (class="mainCntnr") */
+
+        .main-cntnr {
+  /*        display: flex;
+            align-items: center;
+            justify-content: center;  */
+            width: 100%;
+            height: 99vh;
+            overflow: hidden;
+            background: black;
+         /*    margin-top: 3em;  */
+        /*   border: 2px solid green;  */
       }
 
+    /* || End CSS for mainContainer
 
-    /* CSS for 'main' Navigation  */
 
-    .selNav {
-        color: orange;
-    }
 
-	.mainNav {
-    /*    display: none;  */
-	    position: fixed;
-	    top: 0;
-        left:0;
-	    width:100%;
-		height:3.2em;
-    /*    opacity: 0.3;  */
-	/*	margin: 0.1em;
-		margin-top:0.1em; */
-        background-color:black;
-	/*	border: 1px solid red;  */
-	}
 
- /*       .mainNav img {
-            position: absolute;
-            top: 0;
-            left: 0.5em;
-            height: 150%;
-        }
- */
-        .navList {
-     /*       position: absolute;
-            top: 0;
-            right: 0;  */
-            width: 100%;
-            text-decoration: none;
-            list-style-type: none;
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 0.2em;    
-            padding: 0;
+
+    /* || CSS for 'main' Navigation  */
+
+        .nav-label {
+            position: fixed;
+            top: 0em;
+            left: 1em;
+           /* height: 1em; */
+            font-size: 1.2em;
+            padding: 0 1em;
+            cursor: pointer;
+            border-bottom: 0.1em solid white;
+            background-color: black;
+            z-index: 10;
         }
 
-        .navItem {
-       /*     text-decoration: none; */
-            cursor:pointer;
-      /*      height: 1.4em;  */
-            font-size: 1.4em; /*calc(1em + 22 * 70vw/1620); 2vw;  */
-     /*       padding: 0.1em 0.1em;
-            margin: 0.1em 0.2em;  */
-            color: white;
-            transition: color .5s ease;
-      /*      border: 1px solid white;   
-            background-color:black;  */
-        }
+            .nav-label:hover {
+                color: orange;
+            }
 
-        .navItem:hover {
-        /*    padding-top: 0.05em;  */
-            color: orange; /*#FFA07A; */
-            opacity: 0.5;
-            transition: color .5s ease;
-        }
+                .nav-item{
 
-        .navSubItem {
-       /*     text-decoration: none; */
-            cursor:pointer;
-      /*      height: 1.4em;  */
-            font-size: 1.2em;/*calc(0.7em + 22 * 70vw/1620); 2vw;  */
-     /*       padding: 0.1em 0.1em;
-            margin: 0.1em 0.2em;  */
-            margin-right: 1.5em;
-            color: white;
-            transition: color .5s ease;
-     /*       border: 1px solid white;   
-            background-color:black;  */
-        }
+                }
 
-        .navSubItem:hover {
-        /*    padding-top: 0.05em;  */
-            color: orange; /*#FFA07A; */
-        /*    opacity: 0.5;  */
-            transition: color .5s ease;
-        }
+                    .nav-item:hover{
+                       color: orange; 
+                    }  
+
+                .sel-nav {
+                    display: none;
+                }
 
 
-    .subNav {
-    /*    display: none;  */
-        width: 100%;
-        height: 1.4em;
-        display: flex;
-        justify-content: space-around;
-    /*    opacity: 0.3;  */
-    /*  margin: 0.1em;
-        margin-top:0.1em; */
-        background-color:black;
-     /*   border: 1px solid blue;  */
-    }
-        .navSubList {
-         /*   position: absolute;
-            top: 2.6vw;
-            right: 0; */
-         /*  width: 75%;  */
-            text-decoration: none;
-            list-style-type: none;
-            display: flex;
-            justify-content: space-between;
-        /*    margin-left: 2em;   */ 
-            padding: 0;
-        /*    border: 4px solid green;  */
+
+        .nav-cntnr {
+            position: fixed;
+            top: 1.5em;
+            left: 0.05em;
+            opacity: 1;
+            transition: opacity ease-in-out 0.3s;
+            z-index: 100;
+            background-color: black;
+         /*   border: 1px solid white;  
+            display: none; */
+         /*   margin-top: -1.1em;  */
         }
+
+            .hide-nav-cntnr {
+                opacity: 0;
+                z-index: -1;
+            }
+
+            .nav-options-cntnr {
+           /*     border: 1px solid red;  
+                width: 5.5em;
+                height: 5.5em;  */
+           /*     transition-property: width, height, opacity;
+                transition-duration: 0.7s;
+                transition-timing-function: ease-in-out;  
+                margin-top: 5px;  */
+                padding: 1.5em; 
+                padding-top: 0;
+             /*   z-index: 10;  */
+            }
+
+                .options-ul {
+                    list-style-type: none;
+               /*     border: 1px solid yellow;  */
+                }
+
+                    .options-ul li{
+                        cursor: pointer;
+                    }
+
+    /* || End CSS for main Nav  */
+
       
 
-    /* CSS for page container  */
+    /* || CSS for .page-cntnr  */
 
-    .pageCntnr {
+    .page-cntnr {
         position: relative;
         top: 0;
         left: 0;  
@@ -155,58 +130,7 @@
         /*  border: 2px solid red;  */
     }
 
-        /* CSS for home page  */
-
-        .homePage {
-            width: 100%;
-            height: 50%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-         /*   align-items: flex-center;  */
-         /*   margin: 2px;  */
-          /*  border: 2px solid white;   */
-        }
-
-            .headingCntnr {
-                width: 100%;
-                height: 100%;
-                margin-top: 10em;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                border: 1px solid red;   
-            }
-      
-        
-
-            .homePage h1 {
-        /*    border: 1px solid orange;  */
-                font-size: 2em;
-        /*    height: 5em;   */
-            }  
-
-            .homePage h2 {
-        /*    border: 1px solid orange;  */
-                font-size: 1.7em;
-        /*    height: 3em;
-            margin-bottom: 1em; */
-            }  
-
-            .homePage h3 {
-        /*    border: 1px solid orange;  */
-                font-size: 1.4em;
-        /*    height: 3em;
-            margin-top: 1em; */
-            }
-
-
-
-        /* CSS for page  */
+        /* || CSS for all pages  */
 
         .page {
             position: absolute;
@@ -220,15 +144,94 @@
             justify-content: center;
         /*    margin: 5px;  */
             background: black;  
-           border: 2px solid blue;  
+        /*    border: 2px solid blue; */
+            opacity: 0;
+            transition: opacity 1.1s ease-in-out;  
             overflow: hidden;   
         }
 
+        .show-pg {
+         /*    display: block; */
+            opacity: 1;
+           z-index: 1; 
+        }
+
+        .hide-pg {
+          /*  display: none; */
+            opacity: 0;
+            z-index: 0;  
+        }
+
+        /* || End CSS for all pages
+
+    /* || End CSS for .page-cntnr
 
 
-            /* CSS for About page  */
 
-            .subPage {
+    /* || CSS for home page  */
+
+        .home-page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+         /*   display: grid;
+            place-items: center;  */
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+                background-image: url("imgs/Goals_Checked.png");
+                background-size: contain;
+          /*  align-items: flex-center; */  
+         /*   margin: 2px;  */
+         /*   border: 2px solid white;  */ 
+        }
+
+            .heading-cntnr {
+                width: 100%;
+                height: 50%;
+            /*    margin-top: 10em; */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+             /*   border: 1px solid red;   */
+            }
+      
+        
+
+            .home-page h1 {
+        /*    border: 1px solid orange;  */
+                font-size: 4.8em;
+        /*    height: 5em;   */
+            }  
+
+            .home-page h2 {
+        /*    border: 1px solid orange;  */
+                font-size: 4.2em;
+        /*    height: 3em;
+            margin-bottom: 1em; */
+            }  
+
+            .home-page h3 {
+        /*    border: 1px solid orange;  */
+                font-size: 3.5em;
+        /*    height: 3em;
+            margin-top: 1em; */
+            }
+
+    /* || End CSS for home page  */
+
+
+
+
+    /* || CSS for About page  */
+
+        .about-pg {
+        }
+
+            .sub-page {
                 width: 100%;
                 height: 100%; /* calc(100% - 5.2vw); */
                 position: absolute;
@@ -243,11 +246,11 @@
                 overflow: hidden;   */
             }
 
-                .subPage label {
+                .sub-page label {
                     color: orange;
                 }
 
-                .subPage li {
+                .sub-page li {
                     color: #CCC;
                 }
 
@@ -270,8 +273,6 @@
                     font-size: 7vh;
                     word-wrap: break-word;
                 }
-
-
 
             .labelCntnr {
                 width: 100%;
@@ -299,297 +300,55 @@
                     text-align: center; */
                 }
 
-
-
-            /* CSS for Execute page  */
-
-                /* CSS for .execPlanCntnr  */
-
-
-                .execPlanCntnr {
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;  
-                    width: 100%;
-                    height: 100%;
-                    margin: 5px;
-                    color: white;
-                /*      background: red;
-                  border: 2px solid blue; */
-                }
-
-                    .execPlanCntnr label {
-                        color: white;
-                        font-size: 1.5em;
-                    }
-
-
-                /* CSS for .selectorCntnr  */
-
-                .selectorCntnr {
-                    display: none;
-                    position: absolute;
-                    left: 0;
-                    top: 0;             
-                    padding: 2px;
-                    width: 100%;
-                    height: 20em;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: center;
-                    margin: 5px;
-                /*  border: 1px solid blue;  */
-                }
-
-
-                    /* CSS for .selectorLabel  */  
-
-                    .selectorLabel {
-                    /*     writing-mode: vertical-rl;
-                        text-orientation: upright;  
-                        margin-top: -1em;  */
-                        cursor: pointer;
-                        font-size: 0.5em;
-                        color: white;
-                        font-weight: bold;
-                        width: 2em;
-                    /*    height: 7em; 
-                        padding: 0.2em;  */
-                    /*   margin-right: 0.5em;  */
-                        background-color: white;
-                    /*    border: 1px solid white;  */
-                        border-bottom-left-radius: 1em;
-                        border-bottom-right-radius: 1em; 
-                        z-index: 10;  
-                    }
-
-
-                    /* CSS for .optionsCntnr  */  
-
-                    .optionsCntnr {
-                        display: flex;
-                        justify-content: space-between;
-                        transition: opacity 0.6s ease;
-                        padding-left: 1.5em;
-                        padding-right: 1.5em;
-                        padding-bottom: 1.5em;
-                        background: black;
-                     /*   border: 1px solid yellow; */
-                        box-sizing: content-box;
-                        color: white;
-                        margin-top: -1em;
-                    }
-
-                        .optionsCover {
-                            position: relative;
-                            display: flex; 
-                        /*    justify-content: space-between; */
-                            width: 24em;
-                            height: 16em;
-                        /*    margin-top: 1.5em;
-                            margin-right: 1.5em;
-                            margin-bottom: 1.5em; */
-                            padding: 1em;
-                         /*   border: 1px solid orange;  */
-                        }
-
-
-                        /* CSS for .deptList, .divListCntnr  */   
-
-                        .deptList, .divListCntnr {
-                         /*    position: relative;
-                            transition: margin-left 1s ease;
-                           padding: 1em;
-                            margin: 5px;
-                              transition-delay: 0.7s;
-                          width: 4em;
-                            height: 5em; */
-                        } 
-
-                            .deptOptions, .divOptions {
-                                list-style: none;
-                                font-size: 1.3em;
-                                padding: -1px;  
-                                white-space: nowrap; ;
-                             /*   border: 1px solid green;  */
-                            }
-
-                                .deptOptions li, .divOptions li {
-                                    cursor: pointer;
-                                /*    border: 1px solid blue; */
-                                }
-
-
-                        /* CSS for .deptList  */
-
-                            .deptLabel {
-                                color: white;
-                                font-size: 1.5em;
-                           /*     border: 1px solid white;  */
-                            }
-
-                            .deptOptions {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                list-style: none;
-                                font-size: 1.3em;
-                            }
-
-                                .deptOptions li {
-                                    cursor: pointer;
-                                }
-
-               
-                            .deptOptions {
-                             /*   margin-left: -2em;  */
-                            }
-
-                                .deptOptions li {
-                                    margin-left: -1.8em;  
-                                }
-
-
-                        /* CSS for .divListCntnr  */  
-
-                        .divListCntnr {
-                            position: relative;
-                            height: 100%;
-                            margin-left: 1em;
-                        /*    border: 1px solid blue; */
-                        }
-
-                            .divLabel {
-                                padding-left: 1.3em;
-                                color: white;
-                                font-size: 1.5em;
-                             /*   border: 1px solid white;  */
-                            }
-
-
-
-
-
-                
-  /*       .deptSelectorCntnr {
+        .form {
             position: absolute;
-            left: 0;
-            top: 0; 
-            height: 100%; 
-            width: 1.2em;
+            top: -0.3em;
+            left: -0.3em; 
+            background-color: #ff00ff;
+            width: 0.6em;
+            height: 0.6em;
+        /*    border:1px solid orange;  */
+            border-radius: 0.3em;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .form_2 {
+         /*   display: inline;
+            background-color: #ff00ff; */
+            width: 1.3em;
+           /* height: 0.3em;
+            border-radius: 0.15em;
+            border: 1px solid yellow; */
+        }
+
+        .nodeName {
+            position: relative;
+            top: -0em;
+            left: 0em;
+        }
+
+    /* || CSS for .about-nav class */
+
+        .about-nav {
             display: flex;
-            flex-direction: column;
             justify-content: center;
-           border: 1px solid red; 
-        }  */
-
-
-
-
-
-                .selectedDept, .selectedDiv {
-                    color: orange;
-                }
-
-                .selectedDivList {
-                    opacity: 1;
-                }
-
-                .unSelectedDivList {
-                    opacity: 0;
-                }
-
-
-
-
-
-
-        .hideOptions {
-            opacity: 0;
-            z-index: -1;
+         /*   width: calc(100% - 20em);  
+            margin-left: 10em;
+            z-index: -1;   
+            border: 1px solid red;  */
         }
 
-        .currentId {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            z-index: -1;
-        }
-  
+    /* || End CSS for .about-nav class */
 
-     .selNav {
-            color: orange;
-        }
-
-        .z2 {
-            z-index: 2;
-        } 
-
-
-                .hideDeptOptions {
-                    margin-left: -3em;
-                }
-
-                .showDeptOptions {
-                    margin-left: 7em; 
-                }
-
-                .selectedDept {
-                    color: orange;
-                }
-
-                .unSelectedDept {
-                    color: white;
-                }
-
-
-
-
-        .currentDeptDivLabelCntnr {
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            justify-content: space-around;
-        }
+/*|| End CSS for About page   */
 
 
 
 
 
-       /*     .h2Cntnr {
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: flex;
-                align-items: center;
-                width: 1.3em;
-                height: 100%;
-            }  */
 
-
-
-    /* CSS for hiding pages */
-    .show {
-        opacity: 1;
-        transition: opacity 2s ease;
-    }
-
-    .hide {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-
-
-
-
-    /* CSS for Company Page */
+/* || CSS for Company Page */
 
     #companyCntnr {
         position: absolute;
@@ -598,7 +357,7 @@
         width: 100%;
         height: 100%;
         padding: 5px; 
-        border: 1px solid green; 
+     /*   border: 1px solid green; */
     }
 
     #companyVis {
@@ -609,13 +368,13 @@
         margin-top: -2em;
         overflow:hidden;
         background-color:black;
-        border:1px solid red; 
+     /*   border:1px solid red; */
     }
 
     #companyLog {
         position:absolute;
-        top:3em;
-        left:0.5em;  
+        top:2em;
+        right:0.5em;  
         font-size:0.7em;
         font-weight:bold;
         color:yellow; 
@@ -624,8 +383,6 @@
         border:1px solid yellow; 
         overflow:visible;
     }
-
-
 
     /*TOOLTIPS*/
     .tip {
@@ -644,18 +401,30 @@
         padding:7px;
     }
 
+/* || End CSS for Company Page */
 
 
 
 
 
-    /* CSS Miscellaneous: opacity, z-index */
+/* || CSS Miscellaneous: opacity, z-index */
+
+    /* CSS for hiding pages */
+
+    .show {
+        opacity: 1;
+    }
+
 
     .blur {
         opacity: 0.6;
     }
 
     /* CSS z-index */
+
+    .z2 {
+        z-index: 2;
+    } 
 
     .z5 {
         z-index: 5;
@@ -672,3 +441,5 @@
     .underline {
         color: orange;
     }
+
+/* || End CSS Miscellaneous: opacity, z-index */

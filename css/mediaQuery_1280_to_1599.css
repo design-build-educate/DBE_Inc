@@ -120,6 +120,6 @@
         align-items: center;
         justify-content: center;
         padding: 2px;   
-        border: 2px solid yellow;  
+   /*     border: 2px solid yellow;  */
        overflow: hidden;   
     }

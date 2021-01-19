@@ -8,43 +8,17 @@
 
             //Methods
             load: function() {
+           // alert("in LoadData.load()");
               //  alert("projectHTML: " + projectHTML);
-                document.getElementById("pageA").innerHTML = Goals.load_HTML();
-                document.getElementById("pageB").innerHTML = Guidlines.load_HTML();
-                document.getElementById("pageC").innerHTML = Project.load_HTML();
-                document.getElementById("deptLabelId").innerHTML = DepartmentData.load_Label();
+                document.getElementById("page-A-id").innerHTML = Goals.load_HTML();
+                document.getElementById("page-B-id").innerHTML = Guidlines.load_HTML();
+                document.getElementById("page-C-id").innerHTML = Project.load_HTML();
+             /*   document.getElementById("deptLabelId").innerHTML = DepartmentData.load_Label();
                 document.getElementById("deptListId").innerHTML = DepartmentData.load_List();
-                document.getElementById("engrListId").innerHTML = EngineeringData.load_List();
+                document.getElementById("engrListId").innerHTML = EngineeringData.load_List(); */
                 this.HTML_loaded = true;
             }
         }
-
-
-
-/*
-*   Class: DisplayCompany
-*       //Properties
-*       loaded: 
-*       
-*       // Methods 
-*       load:
-*
-*   Called By Class: PageManager
-*   Calls function: createST()  
-*/ 
-
-    var DisplayCompany = {
-        //Properties
-        loaded: false,
-
-        //Methods
-        load: function() {
-        // alert("load ST");
-        //  alert("cNode4.name: " + cNode4.name);
-            createST("companyVis", cNode4);
-            this.loaded = true;
-        }	
-    }    
 
 
 

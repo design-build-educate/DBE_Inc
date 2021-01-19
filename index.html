@@ -7,7 +7,7 @@
     <meta name="author" content="Bob Englert">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <title>Educate, Design & Build Inc.</title>
+    <title>Design, Build & Educate Inc.</title>
 
 
     <!-- CSS Files -->
@@ -20,9 +20,10 @@
     <link type="text/css" href="css/selNav.css" rel="stylesheet">
 
     <!-- JIT Library File -->
-    <script language="javascript" type="text/javascript" src="js/jit.js"></script> 
+    <script src="js/jit.js"></script> 
 
     <!-- Class Files -->
+    <script src="js/Classes.js"></script>
     <script src="js/Company_Data.js"></script> 
     <script src="js/Javascript_Classes.js"></script>
     <script src="js/HTML_Data.js"></script> 
@@ -35,133 +36,227 @@
     <script src="js/IdExecObjHashTable.js"></script>  
    
     <script>
-      
     </script>
 
     <style>
-        .form {
-            position: absolute;
-            top: -0.1em;
-            left: -0.1em; 
-            background-color: #ff00ff;
-            width: 0.2em;
-            height: 0.2em;
-        /*    border:1px solid orange;  */
-            border-radius: 0.1em;
+
+        .about-nav > input {
+            display:block; /* "enable" hidden elements in IE/edge */
+            position:absolute; /* then hide them off-screen */
+            left:-100%;
+        }
+
+        .about-nav > ul {
+            position:relative;
+            color: white;
+            z-index:999;
+            list-style:none;
+            display:flex;
+         /*   align-items: flex-end;*/
+            height: 2.05em;
+            width: 21em; 
+            background-repeat: no-repeat;
+            background-size: cover; 
+          /*  margin-bottom:-1px;
+            border: 1px solid red;  */
+        }
+
+        .about-nav > div {
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .about-nav > ul label {
+            display:inline-block;
+            padding:0.25em 1em;
+            font-size: 1.5em;
             cursor: pointer;
-            z-index: 10;
+        }
+   /* || CSS: Needed to adjust Label Text with Background Img   */
+        .about-nav > input:nth-child(1) ~ ul li:nth-child(1) 
+        {
+            margin-left: 1.5em;
+            margin-right: 1.1em;
         }
 
-        .form_2 {
-         /*   display: inline;
-            background-color: #ff00ff; */
-            width: 1.3em;
-           /* height: 0.3em;
-            border-radius: 0.15em;
-            border: 1px solid yellow; */
+        .about-nav ul 
+        {
+            width: 30em;
+            height: 3em;
+            padding-top: 0.2em;
+        }
+    /* || End */
+
+        .about-nav > input:nth-child(2) ~ ul li:nth-child(2)
+        {
+            margin-right: 1.1em;
+        } 
+
+        .about-nav > input:nth-child(1):focus ~ ul li:nth-child(1) label,
+        .about-nav > input:nth-child(2):focus ~ ul li:nth-child(2) label,
+        .about-nav > input:nth-child(3):focus ~ ul li:nth-child(3) label 
+        {
+            color: orange;
         }
 
-        .nodeName {
-            position: relative;
-            top: -0em;
-            left: 0em;
+        .about-nav > input:nth-child(1):checked ~ ul li:nth-child(1) label,
+        .about-nav > input:nth-child(2):checked ~ ul li:nth-child(2) label,
+        .about-nav > input:nth-child(3):checked ~ ul li:nth-child(3) label
+        {
+            color: orange;
+        }
+
+        .about-nav > input:nth-child(1):focus ~ ul,
+        .about-nav > input:nth-child(1):checked ~ ul
+        { 
+            background-image: url("imgs/Goals_Checked.png");
+        }
+
+        .about-nav > input:nth-child(2):focus ~ ul,
+        .about-nav > input:nth-child(2):checked ~ ul
+        { 
+            background-image: url(imgs/Guidelines_Checked.png);
+        }
+
+        .about-nav > input:nth-child(3):focus ~ ul,
+        .about-nav > input:nth-child(3):checked ~ ul
+        { 
+            background-image: url(imgs/Project_Checked.png);
+        }
+
+        .about-nav > div > section,
+        .about-nav > div > section h2 {
+            position:absolute;
+            top:-999em;
+            left:-999em;
+        }
+
+        .about-nav > div > section {
+            padding:1em 1em 0; 
+        }
+
+        .about-nav > input:nth-child(1):checked ~ div > section:nth-child(1),
+        .about-nav > input:nth-child(2):checked ~ div > section:nth-child(2),
+        .about-nav > input:nth-child(3):checked ~ div > section:nth-child(3) {
+            position:absolute;
+            top: 2em;
+            left: 0;
+            width: 100%;
+            color: orange;
         }
     </style>
 
 </head>
 
-<body onload="LoadData.load()">
-    <div class="mainCntnr">
+<body onload="init()">
+    <main class="main-cntnr">
         <!-- Container for Page selectors   -->
-        <nav class="mainNav z10">
-            <ul class="navList">
-                <li id="nav0" class="navItem selNav" onclick="PageMngr.changePage(event)">Home</li>
-                <li id="nav1" class="navItem blur" onclick="PageMngr.changePage(event)">About</li>
-                <li id="nav2" class="navItem blur" onclick="PageMngr.changePage(event)">Company</li>
-                <li id="nav3" class="navItem blur" onclick="PageMngr.changePage(event)">Execution</li>  
-            </ul>
-            <nav id="subNavId" class="subNav z10 hide">
-                <ul class="navSubList">
-                    <li id="navA" class="navSubItem selNav" onclick="PageMngr.changeSubPage(event)">Goals</li>
-                    <li id="navB" class="navSubItem blur" onclick="PageMngr.changeSubPage(event)">Guidelines</li>
-                    <li id="navC" class="navSubItem blur" onclick="PageMngr.changeSubPage(event)">Project</li> 
+        <label class="nav-label" onclick="NavHandler.showHide()">Nav</label>
+        <nav id="nav-cntnr-id" class="nav-cntnr hide-nav-cntnr" onmouseleave = "NavHandler.mouseLeave()">
+            <div id="nav-options-cntnr-id" class="nav-options-cntnr">
+                <ul class="options-ul">
+                    <li id="home-nav-id" class="nav-item sel-nav" onclick  = "NavHandler.changePg(event)">Home</li>
+                    <li id="about-nav-id" class="nav-item" onclick = "NavHandler.changePg(event)">About</li>
+                    <li id="company-nav-id" class="nav-item" onclick = "NavHandler.changePg(event)">Company</li>
+                <!--    <li id="execution-nav-id" class="nav-item" onclick = "NavHandler.changePg(event)">Execution</li> -->
+                    <li id="resource-nav-id" class="nav-item" onclick = "NavHandler.changePg(event)">Resource</li>
                 </ul>
-            </nav>
+            </div>
+        <!--    <div id="nav-bottom-id"></div>  -->
         </nav>
 
         <!-- container for all pages  -->
-        <section class="pageCntnr">
-            <!-- Page 0  -->
-            <section id="page0" class="homePage show">
-                <div class="headingCntnr">
+        <div class="page-cntnr">
+            <!-- Home Page -->
+            <main id="home-pg-id" class="page home-page show-pg">
+                <div class="heading-cntnr">
                     <h2>Welcome to:</h2>
-                    <h1>Educate, Design & Build Inc.</h1>
-                    <h3>(ED&B Inc.)</h3>
+                    <h1>Design,Build & Educate</h1>
+                    <h3>(DB&E Inc.)</h3>
                 </div>      
-            </section><!-- end of "homePage" -->
+            </main>  <!-- End of #home-pg-id  -->
                     
-            <!-- Page 1 -->  
-            <section id="page1" class="page hide">
-                <section id="pageA" class="subPage z10 show">
-                    <h2>Goals SubPage</h2>
-                </section>
-                <section id="pageB" class="subPage hide">
-                    <h2>Guidelines SubPage</h2>
-                </section>
-                <section id="pageC" class="subPage hide">
-                    <h2>Project SubPage</h2>
-                </section>
-            </section> <!-- end of "page1"  -->
+            <!-- About Page -->
+            <main id="about-pg-id"  class="about-pg hide-pg">
+                <nav class="about-nav">
+                    <input
+                        type="radio"
+                        name=".about-nav_1"
+                        id=".about-nav_1_goals"
+                        hidden
+                        aria-hidden="true"
+                        checked
+                    >
+                    <input
+                        type="radio"
+                        name=".about-nav_1"
+                        id=".about-nav_1_guidelines"
+                        hidden
+                        aria-hidden="true"
+                    >
+                    <input
+                        type="radio"
+                        name=".about-nav_1"
+                        id=".about-nav_1_project"
+                        hidden
+                        aria-hidden="true"
+                    >
+                   
+                    <ul hidden aria-hidden="true">
+                        <li><label for=".about-nav_1_goals">Goals</label></li>
+                        <li><label for=".about-nav_1_guidelines">Guidelines</label></li>
+                        <li><label for=".about-nav_1_project">Project</label></li> 
+                    </ul>
 
-            <!-- Page 2 -->
-            <section id="page2" class="page hide">
-             <!--   <h2>Company page</h2> -->
+                    <div class="about-sub-page-cntnr">
+                        <section id="page-A-id" class="sub-page show-sub-page z10">
+                          <!--  <h1>Goals Data</h1>  -->
+                        </section>
+                        <section id="page-B-id" class="sub-page">
+                         <!--   <h1>Guidelines Data</h1>  -->
+                        </section>
+                        <section id="page-C-id" class="sub-page">
+                           <!-- <h1>Project Data</h1>  -->
+                        </section>
+                    </div>
+                </nav>
+            </main>  <!-- End of #about-pg-id  -->
+
+            <!-- Company Page -->
+            <main id="company-pg-id"  class="page hide-pg">
+             <!--   <h2>Company page</h2>  -->
                 <div id="companyCntnr" class="z10"> 
-                    <div id="companyLog"></div>
-                    <div id="companyVis"></div>
+                    <div id="companyLog">Log</div>
+                    <div id="companyVis">Company Vis</div>
                 </div>      
-            </section><!-- end of "page2" -->
+            </main>  <!-- End of #company-pg-id  -->
 
-            <!-- Page 3 -->  
-            <section id="page3" class="page execPg hide">
-                <section id="execPlanCntnrId" class="execPlanCntnr">
-                </section>
-                <nav id="selectorCntnrId" class="selectorCntnr">
-                    <label id="selectorLabelId" class="selectorLabel" onclick="SelectorHandler.showHide()">D</label>
-                    <div id="optionsCntnrId" class="optionsCntnr hideOptions z-1" onmouseout="SelectorHandler.mouseOut(event)">
-                        <div id="optionsCoverId" class="optionsCover">
-                            <div id="deptListId" class="deptList">
-                                <label class="deptLabel">DEPARTMENT</label>
-                                <ul class='deptOptions'>
-                                    <li id="managementId" class="selectedDept" onclick="SelectorHandler.changeDepartment(event)">Management</li>
-                                    <li id="engineeringId" onclick="SelectorHandler.changeDepartment(event)">Engineering</li>
-                                    <li id="technicianId" onclick="SelectorHandler.changeDepartment(event)">Technician</li>
-                                    <li id="computerId" onclick="SelectorHandler.changeDepartment(event)">Computer</li>
-                                    <li id="educationId" onclick="SelectorHandler.changeDepartment(event)">Education</li>
-                                    <li id="mediaId" onclick="SelectorHandler.changeDepartment(event)">Media</li>
-                                </ul>
-                            </div>
-                            <div id="divListCntnrId" class="divListCntnr">
-                            <!--    <div id="mngrListId" class="deptDivList selectedDivList"> -->
-                                    <label class="divLabel">DIVISION</label>
-                                    <ul id="divOptionsId" class='divOptions'>
-                                    </ul>   
-                            </div> <!-- End of:  <div id="divListCntnrId" class="divListCntnr">  -->
-                        </div> <!-- End of:  <div id="optionsCoverId" class="optionsCover">  -->
-                    </div> <!-- End of:  <div id="optionsCntnrId" class="optionsCntnr hideOptions z-1"                    onmouseout="SelectorHandler.mouseOut(event)">  -->
-                </nav> <!-- <nav id="selectorCntnrId" class="selectorCntnr">  -->
+            <!-- Resource Page --> 
+            <main id="resource-pg-id"  class="page hide-pg">
+                <label>Resource Page</label>
+            </main>  <!-- End of #resourse-pg-id  -->
 
-        <!--          -->
+        </div> <!-- end of: "page-cntnr"  --> 
 
-                <label id="mouseOutId">MouseOut</label>
-            </section> <!-- end of: "page3" -->
-
-        </section>  <!-- end of: "pageCntnr"  --> 
-    </div> <!-- end of: "mainCntnr"  -->
+    </main> <!-- end of: "main-cntnr"  -->
 
 
     <script>
 
+        function init(){
+    //    alert("in init()");
+            LoadData.load();
+    //    alert("LoadData.load() finished");
+            NavHandler.init();
+     //   alert("NavHandler.init() finished");
+     /*       document.getElementById('page-A-id').innerHTML = Goals.load_HTML();
+        alert("Goals.load_HTML() finished");
+            document.getElementById('page-B-id').innerHTML = Guidelines.load_HTML();
+            document.getElementById('page-C-id').innerHTML = Project.load_HTML(); */
+        }
       
     /* Global variables! necessary for SpaceTree? */  
     var labelType, useGradients, nativeTextSupport, animate;
